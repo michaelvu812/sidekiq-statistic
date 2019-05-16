@@ -36,7 +36,6 @@ module Sidekiq
           charts = Sidekiq::Statistic::Charts.new(*calculate_date_range(params))
           
           json({
-            tooltip_template: '<%= datasetLabel %> - <%= value %>',
             labels: charts.dates,
             failed_datasets: charts.information_for(:failed),
             passed_datasets: charts.information_for(:passed)

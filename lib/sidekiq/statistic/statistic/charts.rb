@@ -8,12 +8,13 @@ module Sidekiq
           color = color_for(worker)
           {
             label: worker,
-            fillColor: "rgba(#{color},0.2)",
-            strokeColor: "rgba(#{color},0.9)",
-            pointColor: "rgba(#{color},0.2)",
-            pointStrokeColor: '#fff',
-            pointHighlightFill: '#fff',
-            pointHighlightStroke: 'rgba(220,220,220,1)',
+            backgroundColor: "rgba(#{color},0.2)",
+            borderColor: "rgba(#{color},0.9)",
+            lineTension: 0.2,
+            pointBackgroundColor: "rgba(#{color},0.2)",
+            pointBorderColor: '#fff',
+            pointHoverBackgroundColor: '#fff',
+            pointHoverBorderColor: 'rgba(220,220,220,1)',
             data: statistic_for(worker).map{ |val| val.fetch(type, 0) }
           }
         end
